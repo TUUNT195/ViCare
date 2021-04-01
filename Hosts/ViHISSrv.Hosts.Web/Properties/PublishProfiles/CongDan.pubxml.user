@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\ServiceQNI\CongDan</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Afresco.Lib.Uti.dll">
+      <publishTime>04/22/2019 14:28:45</publishTime>
+    </File>
+    <File Include="bin/Afresco.Lib.Uti.pdb">
+      <publishTime>04/22/2019 14:28:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Business.dll">
+      <publishTime>07/16/2019 14:19:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Business.pdb">
+      <publishTime>07/16/2019 14:19:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Data.dll">
+      <publishTime>07/16/2019 14:19:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Data.pdb">
+      <publishTime>07/16/2019 14:19:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Entities.dll">
+      <publishTime>07/16/2019 14:19:43</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Entities.pdb">
+      <publishTime>07/16/2019 14:19:43</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Hosts.Web.dll">
+      <publishTime>07/16/2019 14:19:45</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Hosts.Web.pdb">
+      <publishTime>07/16/2019 14:19:45</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Services.Contracts.dll">
+      <publishTime>07/16/2019 14:19:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Services.Contracts.pdb">
+      <publishTime>07/16/2019 14:19:44</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Services.dll">
+      <publishTime>07/16/2019 14:19:45</publishTime>
+    </File>
+    <File Include="bin/CongDanSrv.Services.pdb">
+      <publishTime>07/16/2019 14:19:45</publishTime>
+    </File>
+    <File Include="bin/DotCMIS.dll">
+      <publishTime>04/22/2019 14:28:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AnalysisServices.AdomdClient.dll">
+      <publishTime>04/22/2019 14:28:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>04/22/2019 14:28:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>04/22/2019 14:28:46</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/28/2016 14:22:24</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>04/22/2019 14:28:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/16/2019 14:19:45</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

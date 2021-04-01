@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendSMSBrandNameByList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phones" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSMSBrandNameByListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSBrandName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSBrandNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSBrandNameResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSBrandNameWithSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schedule" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSBrandNameWithScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSBrandNameWithScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSBrandNameExAsync">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSBrandNameExAsyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSBrandNameExAsyncResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSMSBrandNameByListSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameByList" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameByListSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameByListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandName" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameWithScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameWithSchedule" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameWithScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameWithScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameExAsyncSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameExAsync" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSBrandNameExAsyncSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSBrandNameExAsyncResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SMS_VNPSoap">
+    <wsdl:operation name="SendSMSBrandNameByList">
+      <wsdl:input message="tns:SendSMSBrandNameByListSoapIn" />
+      <wsdl:output message="tns:SendSMSBrandNameByListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandName">
+      <wsdl:input message="tns:SendSMSBrandNameSoapIn" />
+      <wsdl:output message="tns:SendSMSBrandNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandNameWithSchedule">
+      <wsdl:input message="tns:SendSMSBrandNameWithScheduleSoapIn" />
+      <wsdl:output message="tns:SendSMSBrandNameWithScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandNameExAsync">
+      <wsdl:input message="tns:SendSMSBrandNameExAsyncSoapIn" />
+      <wsdl:output message="tns:SendSMSBrandNameExAsyncSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SMS_VNPSoap" type="tns:SMS_VNPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMSBrandNameByList">
+      <soap:operation soapAction="http://tempuri.org/SendSMSBrandNameByList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandName">
+      <soap:operation soapAction="http://tempuri.org/SendSMSBrandName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandNameWithSchedule">
+      <soap:operation soapAction="http://tempuri.org/SendSMSBrandNameWithSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandNameExAsync">
+      <soap:operation soapAction="http://tempuri.org/SendSMSBrandNameExAsync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SMS_VNPSoap12" type="tns:SMS_VNPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMSBrandNameByList">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSBrandNameByList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandName">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSBrandName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandNameWithSchedule">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSBrandNameWithSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSBrandNameExAsync">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSBrandNameExAsync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SMS_VNP">
+    <wsdl:port name="SMS_VNPSoap" binding="tns:SMS_VNPSoap">
+      <soap:address location="http://wssms.softdaklak.vn/sms_vnp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SMS_VNPSoap12" binding="tns:SMS_VNPSoap12">
+      <soap12:address location="http://wssms.softdaklak.vn/sms_vnp.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
