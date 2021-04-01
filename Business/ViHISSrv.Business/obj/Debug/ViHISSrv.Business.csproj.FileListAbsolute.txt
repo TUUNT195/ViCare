@@ -26,3 +26,10 @@ E:\VietInfo_SVNNew\Sources\V.iCare_Service\Business\ViHISSrv.Business\obj\Debug\
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.csproj.CopyComplete
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.dll
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.csprojAssemblyReference.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.csproj.CoreCompileInputs.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Business.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Business.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.csproj.CopyComplete
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Business\ViHISSrv.Business\obj\Debug\ViHISSrv.Business.pdb

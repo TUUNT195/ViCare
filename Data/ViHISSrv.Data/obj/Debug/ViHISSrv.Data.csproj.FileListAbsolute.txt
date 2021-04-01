@@ -26,3 +26,10 @@ E:\VietInfo_SVNNew\Sources\V.iCare_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.csproj.CopyComplete
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.dll
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Data.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Data.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.csprojAssemblyReference.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.csproj.CoreCompileInputs.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.csproj.CopyComplete
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Data\ViHISSrv.Data\obj\Debug\ViHISSrv.Data.pdb

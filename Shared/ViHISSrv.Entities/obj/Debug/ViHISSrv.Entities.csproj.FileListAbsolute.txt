@@ -19,3 +19,8 @@ E:\VietInfo_SVNNew\Sources\V.iCare_Service\bin\ViHISSrv.Entities.pdb
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Shared\ViHISSrv.Entities\obj\Debug\ViHISSrv.Entities.csproj.CoreCompileInputs.cache
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Shared\ViHISSrv.Entities\obj\Debug\ViHISSrv.Entities.dll
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Shared\ViHISSrv.Entities\obj\Debug\ViHISSrv.Entities.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Entities.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Entities.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Shared\ViHISSrv.Entities\obj\Debug\ViHISSrv.Entities.csproj.CoreCompileInputs.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Shared\ViHISSrv.Entities\obj\Debug\ViHISSrv.Entities.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Shared\ViHISSrv.Entities\obj\Debug\ViHISSrv.Entities.pdb

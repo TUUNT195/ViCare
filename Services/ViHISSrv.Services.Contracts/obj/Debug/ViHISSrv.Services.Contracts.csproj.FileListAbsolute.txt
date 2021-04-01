@@ -26,3 +26,10 @@ E:\VietInfo_SVNNew\Sources\V.iCare_Service\Services\ViHISSrv.Services.Contracts\
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.csproj.CopyComplete
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.dll
 E:\VietInfo_SVNNew\Sources\V.iCare_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Services.Contracts.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\bin\ViHISSrv.Services.Contracts.pdb
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.csprojAssemblyReference.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.csproj.CoreCompileInputs.cache
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.csproj.CopyComplete
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.dll
+E:\VietInfo_SVNNew\Sources\Vi.Care_Service\Services\ViHISSrv.Services.Contracts\obj\Debug\ViHISSrv.Services.Contracts.pdb
