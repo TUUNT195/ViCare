@@ -78,6 +78,19 @@ namespace ViHISSrv.Business
                 return null;
             }
         }
+        //
+        public DataTable QMS_Notification(int BenhNhan_Id)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.QMS_Notification(BenhNhan_Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         #endregion
 
         #region Others

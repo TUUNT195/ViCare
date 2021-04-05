@@ -46,6 +46,11 @@ namespace ViHISSrv.Services.Contracts
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
         DataTable QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0);
+
+
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        DataTable QMS_Notification(int BenhNhan_Id);
         #endregion
 
         #region Others

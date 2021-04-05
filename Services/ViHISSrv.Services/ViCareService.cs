@@ -53,6 +53,12 @@ namespace ViHISSrv.Services
             ViCareComponent objc = new ViCareComponent();
             return objc.QMS_GetByCondition(Type, PhongBanID, IntPara_0);
         }
+        //QMS_Notification
+        public DataTable QMS_Notification(int BenhNhan_Id)
+        {   
+            ViCareComponent objc = new ViCareComponent();
+            return objc.QMS_Notification(BenhNhan_Id);  
+        }
         #endregion
 
         #region Others

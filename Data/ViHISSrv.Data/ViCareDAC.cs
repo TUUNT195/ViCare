@@ -148,9 +148,34 @@ namespace ViHISSrv.Data
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName_QMS))
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "QMS_GetByCondition");
-                    db.AddInParameter(cmd, "@Type", DbType.Int32, Type);
+                    db.AddInParameter(cmd, "@Type", DbType.String, Type);
                     db.AddInParameter(cmd, "@PhongBanID", DbType.Int32, PhongBanID);
                     db.AddInParameter(cmd, "@IntPara_0", DbType.Int32, IntPara_0);
+                    DataSet ds = new DataSet();
+                    ds = db.ExecuteDataSet(cmd);
+                    if (ds != null && ds.Tables.Count > 0)
+                    {
+                        dt = ds.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return dt;
+        }
+        //
+        public DataTable QMS_Notification(int BenhNhan_Id)
+        {
+            Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
+            DataTable dt = new DataTable();
+            try
+            {
+                using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName_QMS))
+                {
+                    db.AddInParameter(cmd, "@Action", DbType.String, "QMS_Notification");
+                    db.AddInParameter(cmd, "@BenhNhan_Id", DbType.Int32, BenhNhan_Id);
                     DataSet ds = new DataSet();
                     ds = db.ExecuteDataSet(cmd);
                     if (ds != null && ds.Tables.Count > 0)
