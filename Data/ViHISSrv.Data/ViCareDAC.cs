@@ -24,7 +24,7 @@ namespace ViHISSrv.Data
         private string _ProcedureName_QMS = "usp_ViCare_QMS_Show";
         #region DangKyHenKB
         //Insert
-        public Int32 DangKyHenKB_Insert(DangKyHenKBModel obj)
+        public Int32 Insert(DangKyHenKBModel obj)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -32,7 +32,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cmd, "@Action", DbType.String, "DangKyHenKB_Insert");
+                    db.AddInParameter(cmd, "@Action", DbType.String, "Insert");
                     db.AddOutParameter(cmd, "@DangKyLichHen_Id", DbType.Int32, obj.DangKyLichHen_Id);
                     db.AddInParameter(cmd, "@TenBenhNhan", DbType.String, obj.TenBenhNhan);
                     db.AddInParameter(cmd, "@NgaySinh", DbType.DateTime, obj.NgaySinh);
@@ -57,7 +57,7 @@ namespace ViHISSrv.Data
             };
         }
         //Update
-        public int DangKyHenKB_Update(DangKyHenKBModel mol)
+        public int Update(DangKyHenKBModel mol)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -65,7 +65,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cm = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cm, "@AcTion", DbType.String, "DangKyHenKB_Update");
+                    db.AddInParameter(cm, "@AcTion", DbType.String, "Update");
                     db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, mol.DangKyLichHen_Id);
                     db.AddInParameter(cm, "@TenBenhNhan", DbType.String, mol.TenBenhNhan);
                     db.AddInParameter(cm, "@NgaySinh", DbType.Date, mol.NgaySinh);
@@ -73,7 +73,7 @@ namespace ViHISSrv.Data
                     db.AddInParameter(cm, "@SoDienThoai", DbType.String, mol.SoDienThoai);
                     db.AddInParameter(cm, "@Email", DbType.String, mol.Email);
                     db.AddInParameter(cm, "@NgayHen", DbType.Boolean, mol.NgayHen);
-                    db.AddInParameter(cm, "@ChuyenKhoa_Id", DbType.Boolean, mol.ChuyenKhoa_Id);
+                    db.AddInParameter(cm, "@ChuyenKhoa_Id", DbType.Boolean, mol.ChuyenKhoa_Id); 
                     db.AddInParameter(cm, "@ThoiGianBatDau", DbType.Time, mol.ThoiGianBatDau);
                     db.AddInParameter(cm, "@ThoiGianKetThuc", DbType.Time, mol.ThoiGianKetThuc);
                     db.AddInParameter(cm, "@UpdateBy_Id", DbType.Int32, mol.UpdateBy_Id);
@@ -114,7 +114,7 @@ namespace ViHISSrv.Data
             return dt;
         }
         //Update mã lịch hẹn
-        public int DangKyHenKB_UpdateRandomMaLichHen(int DangKyLichHen_Id)
+        public int UpdateRandomMaLichHen(int DangKyLichHen_Id)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -122,7 +122,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cm = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cm, "@AcTion", DbType.String, "DangKyHenKB_UpdateRandomMaLichHen");
+                    db.AddInParameter(cm, "@AcTion", DbType.String, "UpdateRandomMaLichHen");
                     db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
 
                     iResult = db.ExecuteNonQuery(cm);
@@ -133,7 +133,75 @@ namespace ViHISSrv.Data
             {
                 return -2;
             }
+        }
+        //LichHen_Notification
+        public DataTable LichHen_Notification()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
+                using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
+                {
+                    db.AddInParameter(cmd, "@Action", DbType.String, "LichHen_Notification");
+                    DataSet ds = new DataSet();
+                    ds = db.ExecuteDataSet(cmd);
+                    if (ds != null && ds.Tables.Count > 0)
+                    {
+                        dt = ds.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return dt;
+        }
+        //TraCuuLichKham
+        public DataTable TraCuuLichKham()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
+                using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
+                {
+                    db.AddInParameter(cmd, "@Action", DbType.String, "TraCuuLichKham");
+                    DataSet ds = new DataSet();
+                    ds = db.ExecuteDataSet(cmd);
+                    if (ds != null && ds.Tables.Count > 0)
+                    {
+                        dt = ds.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return dt;
+        }
+        //HuyLichHen
+        public int HuyLichHen(int DangKyLichHen_Id)
+        {
+            Int32 iResult = Int32.MinValue;
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
+                using (DbCommand cm = db.GetStoredProcCommand(_ProcedureName))
+                {
+                    db.AddInParameter(cm, "@AcTion", DbType.String, "HuyLichHen");
+                    db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
 
+                    iResult = db.ExecuteNonQuery(cm);
+                    return iResult;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -2;
+            }
         }
         #endregion
 
@@ -166,7 +234,7 @@ namespace ViHISSrv.Data
             return dt;
         }
         //
-        public DataTable QMS_Notification(int BenhNhan_Id)
+        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0)
         {
             Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
             DataTable dt = new DataTable();
@@ -176,6 +244,9 @@ namespace ViHISSrv.Data
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "QMS_Notification");
                     db.AddInParameter(cmd, "@BenhNhan_Id", DbType.Int32, BenhNhan_Id);
+                    db.AddInParameter(cmd, "@Type", DbType.String, Type);
+                    db.AddInParameter(cmd, "@PhongBanID", DbType.Int32, PhongBanID);
+                    db.AddInParameter(cmd, "@IntPara_0", DbType.Int32, IntPara_0);
                     DataSet ds = new DataSet();
                     ds = db.ExecuteDataSet(cmd);
                     if (ds != null && ds.Tables.Count > 0)

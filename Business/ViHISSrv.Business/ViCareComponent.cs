@@ -11,12 +11,12 @@ namespace ViHISSrv.Business
     {
         #region DangKyHenKB
         //Insert
-        public int DangKyHenKB_Insert(DangKyHenKBModel obj)
+        public int Insert(DangKyHenKBModel obj)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.DangKyHenKB_Insert(obj);
+                return tkdac.Insert(obj);
             }
             catch (Exception ex)
             {
@@ -24,12 +24,12 @@ namespace ViHISSrv.Business
             }
         }
         //Update
-        public int DangKyHenKB_Update(DangKyHenKBModel obj)
+        public int Update(DangKyHenKBModel obj)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.DangKyHenKB_Update(obj);
+                return tkdac.Update(obj);
             }
             catch (Exception ex)
             {
@@ -50,12 +50,52 @@ namespace ViHISSrv.Business
             }
         }
         //DangKyHenKB_UpdateRandomMaLichHen
-        public int DangKyHenKB_UpdateRandomMaLichHen(int DangKyLichHen_Id)
+        public int UpdateRandomMaLichHen(int DangKyLichHen_Id)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.DangKyHenKB_UpdateRandomMaLichHen(DangKyLichHen_Id);
+                return tkdac.UpdateRandomMaLichHen(DangKyLichHen_Id);
+            }
+            catch (Exception ex)
+            {
+                return -2;
+            }
+        }
+        //GetByKey
+        public DataTable LichHen_Notification()
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.LichHen_Notification();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //GetByKey
+        public DataTable TraCuuLichKham()
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.TraCuuLichKham();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //
+        //HuyLichHen
+        public int HuyLichHen(int DangKyLichHen_Id)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.HuyLichHen(DangKyLichHen_Id);
             }
             catch (Exception ex)
             {
@@ -70,7 +110,7 @@ namespace ViHISSrv.Business
         {
             try
             {
-                ViCareDAC tkdac = new ViCareDAC();
+                ViCareDAC tkdac = new ViCareDAC();  
                 return tkdac.QMS_GetByCondition(Type, PhongBanID, IntPara_0);
             }
             catch (Exception ex)
@@ -79,12 +119,12 @@ namespace ViHISSrv.Business
             }
         }
         //
-        public DataTable QMS_Notification(int BenhNhan_Id)
+        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.QMS_Notification(BenhNhan_Id);
+                return tkdac.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0);
             }
             catch (Exception ex)
             {

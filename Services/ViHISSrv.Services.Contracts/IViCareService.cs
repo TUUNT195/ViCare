@@ -26,19 +26,31 @@ namespace ViHISSrv.Services.Contracts
         //Insert
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 DangKyHenKB_Insert(DangKyHenKBModel obj);
+        Int32 Insert(DangKyHenKBModel obj);
         //Update
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 DangKyHenKB_Update(DangKyHenKBModel obj);
+        Int32 Update(DangKyHenKBModel obj);
         //GetByKey
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
         DataTable GetByKey( int DangKyLichHen_Id);
-        //GetByKey
+        //UpdateRandomMaLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 DangKyHenKB_UpdateRandomMaLichHen(int DangKyLichHen_Id);
+        Int32 UpdateRandomMaLichHen(int DangKyLichHen_Id);
+        //LichHen_Notification
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        DataTable LichHen_Notification();
+        //LichHen_Notification
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        DataTable TraCuuLichKham();
+        //HuyLichHen
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        Int32 HuyLichHen(Int32 DangKyLichHen_Id);
         #endregion
 
         #region QMS
@@ -50,7 +62,7 @@ namespace ViHISSrv.Services.Contracts
 
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable QMS_Notification(int BenhNhan_Id);
+        DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0);
         #endregion
 
         #region Others
