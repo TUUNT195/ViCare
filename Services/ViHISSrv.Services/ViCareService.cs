@@ -64,16 +64,16 @@ namespace ViHISSrv.Services
             return objc.LichHen_Notification();
         }
         //TraCuuLichKham
-        public DataTable TraCuuLichKham()
+        public DataTable TraCuuLichHen()
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.TraCuuLichKham();
+            return objc.TraCuuLichHen();
         }
         //HuyLichHen
-        public int HuyLichHen(int DangKyLichHen_Id)
+        public int HuyLichHen(int DangKyLichHen_Id,int NguoiHuy_Id)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.HuyLichHen(DangKyLichHen_Id);
+            return objc.HuyLichHen(DangKyLichHen_Id, NguoiHuy_Id);
         }
         #endregion
 

@@ -23,6 +23,7 @@ namespace ViHISSrv.Data
         private string _ProcedureName = "usp_ViCare_DangKyHenKB"; // LH
         private string _ProcedureName_QMS = "usp_ViCare_QMS_Show";// App
         private string _ProcedureName_Vicare = "usp_ViCare"; // App
+
         #region Get info
         //
         public DataTable Get_DangKyLichHen_Id_by_MaBenhNhan(string MaBenhNhan)
@@ -40,7 +41,7 @@ namespace ViHISSrv.Data
                     if (ds != null && ds.Tables.Count > 0)
                     {
                         dt = ds.Tables[0];
-                    }
+                    }   
                 }
             }
             catch (Exception ex)
@@ -188,7 +189,7 @@ namespace ViHISSrv.Data
             return dt;
         }
         //TraCuuLichKham
-        public DataTable TraCuuLichKham()
+        public DataTable TraCuuLichHen()
         {
             DataTable dt = new DataTable();
             try
@@ -196,7 +197,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cmd, "@Action", DbType.String, "TraCuuLichKham");
+                    db.AddInParameter(cmd, "@Action", DbType.String, "TraCuuLichHen");
                     DataSet ds = new DataSet();
                     ds = db.ExecuteDataSet(cmd);
                     if (ds != null && ds.Tables.Count > 0)
@@ -212,7 +213,7 @@ namespace ViHISSrv.Data
             return dt;
         }
         //HuyLichHen
-        public int HuyLichHen(int DangKyLichHen_Id)
+        public int HuyLichHen(int DangKyLichHen_Id, int NguoiHuy_Id)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -222,6 +223,7 @@ namespace ViHISSrv.Data
                 {
                     db.AddInParameter(cm, "@AcTion", DbType.String, "HuyLichHen");
                     db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
+                    db.AddInParameter(cm, "@UpdateBy_Id", DbType.Int32, NguoiHuy_Id);
 
                     iResult = db.ExecuteNonQuery(cm);
                     return iResult;

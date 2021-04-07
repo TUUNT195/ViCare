@@ -53,11 +53,11 @@ namespace ViHISSrv.Services.Contracts
         //LichHen_Notification
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable TraCuuLichKham();
+        DataTable TraCuuLichHen();
         //HuyLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 HuyLichHen(Int32 DangKyLichHen_Id);
+        Int32 HuyLichHen(Int32 DangKyLichHen_Id,Int32 NguoiHuy_Id);
         #endregion
 
         #region QMS

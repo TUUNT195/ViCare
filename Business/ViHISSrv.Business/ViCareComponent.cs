@@ -92,12 +92,12 @@ namespace ViHISSrv.Business
             }
         }
         //GetByKey
-        public DataTable TraCuuLichKham()
+        public DataTable TraCuuLichHen()
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.TraCuuLichKham();
+                return tkdac.TraCuuLichHen();
             }
             catch (Exception ex)
             {
@@ -106,12 +106,12 @@ namespace ViHISSrv.Business
         }
         //
         //HuyLichHen
-        public int HuyLichHen(int DangKyLichHen_Id)
+        public int HuyLichHen(int DangKyLichHen_Id, int NguoiHuy_Id)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.HuyLichHen(DangKyLichHen_Id);
+                return tkdac.HuyLichHen(DangKyLichHen_Id, NguoiHuy_Id);
             }
             catch (Exception ex)
             {
