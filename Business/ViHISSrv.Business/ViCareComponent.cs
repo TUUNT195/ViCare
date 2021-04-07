@@ -9,6 +9,22 @@ namespace ViHISSrv.Business
 {
     public class ViCareComponent
     {
+        #region Get info
+        //GetByKey
+        public DataTable Get_DangKyLichHen_Id_by_MaBenhNhan(string MaBenhNhan)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.Get_DangKyLichHen_Id_by_MaBenhNhan(MaBenhNhan);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
+
         #region DangKyHenKB
         //Insert
         public int Insert(DangKyHenKBModel obj)
@@ -119,12 +135,12 @@ namespace ViHISSrv.Business
             }
         }
         //
-        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0)
+        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0);
+                return tkdac.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0, IntPara_1);
             }
             catch (Exception ex)
             {

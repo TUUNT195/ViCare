@@ -20,8 +20,37 @@ namespace ViHISSrv.Data
     public partial class ViCareDAC : DataAccessComponent
     {
 
-        private string _ProcedureName = "usp_ViCare_DangKyHenKB";
-        private string _ProcedureName_QMS = "usp_ViCare_QMS_Show";
+        private string _ProcedureName = "usp_ViCare_DangKyHenKB"; // LH
+        private string _ProcedureName_QMS = "usp_ViCare_QMS_Show";// App
+        private string _ProcedureName_Vicare = "usp_ViCare"; // App
+        #region Get info
+        //
+        public DataTable Get_DangKyLichHen_Id_by_MaBenhNhan(string MaBenhNhan)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
+                using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName_Vicare))
+                {
+                    db.AddInParameter(cmd, "@Action", DbType.String, "Get_DangKyLichHen_Id_by_MaBenhNhan");
+                    db.AddInParameter(cmd, "@MaBenhNhan", DbType.Int32, MaBenhNhan);
+                    DataSet ds = new DataSet();
+                    ds = db.ExecuteDataSet(cmd);
+                    if (ds != null && ds.Tables.Count > 0)
+                    {
+                        dt = ds.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return dt;
+        }
+        #endregion
+
         #region DangKyHenKB
         //Insert
         public Int32 Insert(DangKyHenKBModel obj)
@@ -233,8 +262,8 @@ namespace ViHISSrv.Data
             }
             return dt;
         }
-        //
-        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0)
+        //            
+        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
         {
             Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
             DataTable dt = new DataTable();
@@ -247,6 +276,7 @@ namespace ViHISSrv.Data
                     db.AddInParameter(cmd, "@Type", DbType.String, Type);
                     db.AddInParameter(cmd, "@PhongBanID", DbType.Int32, PhongBanID);
                     db.AddInParameter(cmd, "@IntPara_0", DbType.Int32, IntPara_0);
+                    db.AddInParameter(cmd, "@IntPara_1", DbType.Int32, IntPara_1);
                     DataSet ds = new DataSet();
                     ds = db.ExecuteDataSet(cmd);
                     if (ds != null && ds.Tables.Count > 0)

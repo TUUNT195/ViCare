@@ -18,14 +18,27 @@ namespace ViHISSrv.Services
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Multiple)]
 
     public class ViCareService : IViCareService
-    {   
+    {
+        #region Get info
+        public DataTable GetInfoBy_MabenhNhan(string MaBenhNhan)
+        {
+            int DangKyLichHen_Id = Int32.MinValue;
+            ViCareComponent objc = new ViCareComponent();
+            DataTable dt1 = objc.Get_DangKyLichHen_Id_by_MaBenhNhan(MaBenhNhan);
+            if (dt1.Rows[0]["Ref_DangKyLichHen_Id"] != null)
+                DangKyLichHen_Id = Convert.ToInt32(dt1.Rows[0]["Ref_DangKyLichHen_Id"]);
+            DataTable dt2 = objc.GetByKey(DangKyLichHen_Id);
+            return dt2;
+        }
+        #endregion
+
         #region DangKyHenKB
         //DangKyHenKB_Insert
         public int Insert(DangKyHenKBModel obj)
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.Insert(obj);
-        }   
+        }
         //DangKyHenKB_Update
         public int Update(DangKyHenKBModel obj)
         {
@@ -72,10 +85,10 @@ namespace ViHISSrv.Services
             return objc.QMS_GetByCondition(Type, PhongBanID, IntPara_0);
         }
         //QMS_Notification
-        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0)
-        {   
+        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
+        {
             ViCareComponent objc = new ViCareComponent();
-            return objc.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0);  
+            return objc.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0, IntPara_1);
         }
         #endregion
 

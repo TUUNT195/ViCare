@@ -22,6 +22,13 @@ namespace ViHISSrv.Services.Contracts
     [ServiceContract]
     public interface IViCareService
     {
+        #region Get Info
+        //GetByKey
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        DataTable GetInfoBy_MabenhNhan(string MaBenhNhan);
+        #endregion
+
         #region DangKyHenKB
         //Insert
         [OperationContract]
@@ -62,7 +69,7 @@ namespace ViHISSrv.Services.Contracts
 
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0);
+        DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0,int IntPara_1);
         #endregion
 
         #region Others
