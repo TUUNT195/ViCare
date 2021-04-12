@@ -7,6 +7,7 @@
 
 using log4net;
 using Microsoft.Practices.EnterpriseLibrary.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,9 +120,8 @@ namespace ViHISSrv.Data
             }
         }
         //GetByKey
-        public DataTable GetByKey(int DangKyLichHen_Id)
+        public string GetByKey(int DangKyLichHen_Id)
         {
-            DataTable dt = new DataTable();
             try
             {
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
@@ -129,19 +129,14 @@ namespace ViHISSrv.Data
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "GetByKey");
                     db.AddInParameter(cmd, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
-                    DataSet ds = new DataSet();
-                    ds = db.ExecuteDataSet(cmd);
-                    if (ds != null && ds.Tables.Count > 0)
-                    {
-                        dt = ds.Tables[0];
-                    }
+                    var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
+                    return obj;
                 }
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return dt;
         }
         //Update mã lịch hẹn
         public int UpdateRandomMaLichHen(int DangKyLichHen_Id)
@@ -165,52 +160,40 @@ namespace ViHISSrv.Data
             }
         }
         //LichHen_Notification
-        public DataTable LichHen_Notification()
+        public string LichHen_Notification()
         {
-            DataTable dt = new DataTable();
             try
             {
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "LichHen_Notification");
-                    DataSet ds = new DataSet();
-                    ds = db.ExecuteDataSet(cmd);
-                    if (ds != null && ds.Tables.Count > 0)
-                    {
-                        dt = ds.Tables[0];
-                    }
+                    var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
+                    return obj;
                 }
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return dt;
         }
         //TraCuuLichKham
-        public DataTable TraCuuLichHen()
+        public string TraCuuLichHen()
         {
-            DataTable dt = new DataTable();
             try
             {
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "TraCuuLichHen");
-                    DataSet ds = new DataSet();
-                    ds = db.ExecuteDataSet(cmd);
-                    if (ds != null && ds.Tables.Count > 0)
-                    {
-                        dt = ds.Tables[0];
-                    }
+                    var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
+                    return obj;
                 }
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return dt;
         }
         //HuyLichHen
         public int HuyLichHen(int DangKyLichHen_Id, int NguoiHuy_Id)
@@ -238,10 +221,9 @@ namespace ViHISSrv.Data
 
         #region QMS
         //QMS_GetByCondition
-        public DataTable QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0)
+        public string QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0)
         {
             Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
-            DataTable dt = new DataTable();
             try
             {
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName_QMS))
@@ -250,25 +232,19 @@ namespace ViHISSrv.Data
                     db.AddInParameter(cmd, "@Type", DbType.String, Type);
                     db.AddInParameter(cmd, "@PhongBanID", DbType.Int32, PhongBanID);
                     db.AddInParameter(cmd, "@IntPara_0", DbType.Int32, IntPara_0);
-                    DataSet ds = new DataSet();
-                    ds = db.ExecuteDataSet(cmd);
-                    if (ds != null && ds.Tables.Count > 0)
-                    {
-                        dt = ds.Tables[0];
-                    }
+                    var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
+                    return obj;
                 }
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return dt;
         }
         //            
-        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
+        public string QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
         {
             Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
-            DataTable dt = new DataTable();
             try
             {
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName_QMS))
@@ -279,45 +255,40 @@ namespace ViHISSrv.Data
                     db.AddInParameter(cmd, "@PhongBanID", DbType.Int32, PhongBanID);
                     db.AddInParameter(cmd, "@IntPara_0", DbType.Int32, IntPara_0);
                     db.AddInParameter(cmd, "@IntPara_1", DbType.Int32, IntPara_1);
-                    DataSet ds = new DataSet();
-                    ds = db.ExecuteDataSet(cmd);
-                    if (ds != null && ds.Tables.Count > 0)
-                    {
-                        dt = ds.Tables[0];
-                    }
+                    var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
+                    return obj;
                 }
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return dt;
         }
         #endregion
 
         #region Others
-        public DataTable Mas_BenhNhan_GetAll()
+        public string Mas_BenhNhan_GetAll()
         {
             Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_APP);
-            DataTable dt = new DataTable();
             try
             {
                 using (DbCommand cmd = db.GetStoredProcCommand("usp_Mas_BenhNhan"))
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "GetAll");
-                    DataSet ds = new DataSet();
-                    ds = db.ExecuteDataSet(cmd);
-                    if (ds != null && ds.Tables.Count > 0)
-                    {
-                        dt = ds.Tables[0];
-                    }
+                    var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
+                    return obj;
+                    //ds = db.ExecuteDataSet(cmd);
+
+                    //if (ds != null && ds.Tables.Count > 0)
+                    //{
+                    //    dt = ds.Tables[0];
+                    //}
                 }
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return dt;
         }
         #endregion
     }

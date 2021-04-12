@@ -53,7 +53,7 @@ namespace ViHISSrv.Business
             }
         }
         //GetByKey
-        public DataTable GetByKey(int DangKyLichHen_Id)
+        public string GetByKey(int DangKyLichHen_Id)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace ViHISSrv.Business
             }
         }
         //GetByKey
-        public DataTable LichHen_Notification()
+        public string LichHen_Notification()
         {
             try
             {
@@ -92,7 +92,7 @@ namespace ViHISSrv.Business
             }
         }
         //GetByKey
-        public DataTable TraCuuLichHen()
+        public string TraCuuLichHen()
         {
             try
             {
@@ -122,7 +122,7 @@ namespace ViHISSrv.Business
 
         #region QMS
         //GetByKey
-        public DataTable QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0)
+        public string QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0)
         {
             try
             {
@@ -135,7 +135,7 @@ namespace ViHISSrv.Business
             }
         }
         //
-        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
+        public string QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
         {
             try
             {
@@ -150,7 +150,7 @@ namespace ViHISSrv.Business
         #endregion
 
         #region Others
-        public DataTable Mas_BenhNhan_GetAll()
+        public string Mas_BenhNhan_GetAll()
         {
             try
             {

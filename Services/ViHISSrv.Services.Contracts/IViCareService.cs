@@ -12,7 +12,6 @@ using System.IO;
 using System.ServiceModel;
 using ViHISSrv.Entities;
 using System.ServiceModel.Web;
-using System.Data;
 
 namespace ViHISSrv.Services.Contracts
 {
@@ -26,7 +25,7 @@ namespace ViHISSrv.Services.Contracts
         //GetByKey
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable GetInfoBy_MabenhNhan(string MaBenhNhan);
+        string GetInfoBy_MabenhNhan(string MaBenhNhan);
         #endregion
 
         #region DangKyHenKB
@@ -41,7 +40,7 @@ namespace ViHISSrv.Services.Contracts
         //GetByKey
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable GetByKey( int DangKyLichHen_Id);
+        string GetByKey( int DangKyLichHen_Id);
         //UpdateRandomMaLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
@@ -49,33 +48,32 @@ namespace ViHISSrv.Services.Contracts
         //LichHen_Notification
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable LichHen_Notification();
+        string LichHen_Notification();
         //LichHen_Notification
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable TraCuuLichHen();
+        string TraCuuLichHen();
         //HuyLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
         Int32 HuyLichHen(Int32 DangKyLichHen_Id,Int32 NguoiHuy_Id);
-        #endregion
+        #endregion  
 
         #region QMS
         //QMS_GetByCondition
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0);
-
-
+        string QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0);
+        //
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0,int IntPara_1);
+        string QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0,int IntPara_1);
         #endregion
 
         #region Others
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        DataTable Mas_BenhNhan_GetAll();
+        string Mas_BenhNhan_GetAll();
         #endregion
 
     }

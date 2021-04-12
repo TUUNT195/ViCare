@@ -20,14 +20,14 @@ namespace ViHISSrv.Services
     public class ViCareService : IViCareService
     {
         #region Get info
-        public DataTable GetInfoBy_MabenhNhan(string MaBenhNhan)
+        public string GetInfoBy_MabenhNhan(string MaBenhNhan)
         {
             int DangKyLichHen_Id = Int32.MinValue;
             ViCareComponent objc = new ViCareComponent();
             DataTable dt1 = objc.Get_DangKyLichHen_Id_by_MaBenhNhan(MaBenhNhan);
             if (dt1.Rows[0]["Ref_DangKyLichHen_Id"] != null)
                 DangKyLichHen_Id = Convert.ToInt32(dt1.Rows[0]["Ref_DangKyLichHen_Id"]);
-            DataTable dt2 = objc.GetByKey(DangKyLichHen_Id);
+            var dt2 = objc.GetByKey(DangKyLichHen_Id);
             return dt2;
         }
         #endregion
@@ -46,7 +46,7 @@ namespace ViHISSrv.Services
             return objc.Update(obj);
         }
         //GetByKey
-        public DataTable GetByKey(int DangKyLichHen_Id)
+        public string GetByKey(int DangKyLichHen_Id)
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.GetByKey(DangKyLichHen_Id);
@@ -58,13 +58,13 @@ namespace ViHISSrv.Services
             return objc.UpdateRandomMaLichHen(DangKyLichHen_Id);
         }
         //GetByKey
-        public DataTable LichHen_Notification()
+        public string LichHen_Notification()
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.LichHen_Notification();
         }
         //TraCuuLichKham
-        public DataTable TraCuuLichHen()
+        public string TraCuuLichHen()
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.TraCuuLichHen();
@@ -79,13 +79,13 @@ namespace ViHISSrv.Services
 
         #region QMS
         //QMS_GetByCondition
-        public DataTable QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0)
+        public string QMS_GetByCondition(string Type, int PhongBanID, int IntPara_0)
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.QMS_GetByCondition(Type, PhongBanID, IntPara_0);
         }
         //QMS_Notification
-        public DataTable QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
+        public string QMS_Notification(int BenhNhan_Id, string Type, int PhongBanID, int IntPara_0, int IntPara_1)
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0, IntPara_1);
@@ -93,7 +93,7 @@ namespace ViHISSrv.Services
         #endregion
 
         #region Others
-        public DataTable Mas_BenhNhan_GetAll()
+        public string Mas_BenhNhan_GetAll()
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.Mas_BenhNhan_GetAll();
