@@ -19,6 +19,7 @@ namespace ViHISSrv.Services
 
     public class ViCareService : IViCareService
     {
+    
         #region Get info
         public string GetInfoBy_MabenhNhan(string MaBenhNhan)
         {
@@ -27,53 +28,53 @@ namespace ViHISSrv.Services
             DataTable dt1 = objc.Get_DangKyLichHen_Id_by_MaBenhNhan(MaBenhNhan);
             if (dt1.Rows[0]["Ref_DangKyLichHen_Id"] != null)
                 DangKyLichHen_Id = Convert.ToInt32(dt1.Rows[0]["Ref_DangKyLichHen_Id"]);
-            var dt2 = objc.GetByKey(DangKyLichHen_Id);
+            var dt2 = objc.LH_GetByKey(DangKyLichHen_Id);
             return dt2;
         }
         #endregion
 
         #region DangKyHenKB
         //DangKyHenKB_Insert
-        public int Insert(DangKyHenKBModel obj)
+        public int LH_Insert(DangKyHenKBModel obj)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.Insert(obj);
+            return objc.LH_Insert(obj);
         }
         //DangKyHenKB_Update
-        public int Update(DangKyHenKBModel obj)
+        public int LH_Update(DangKyHenKBModel obj)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.Update(obj);
+            return objc.LH_Update(obj);
         }
         //GetByKey
-        public string GetByKey(int DangKyLichHen_Id)
+        public string LH_GetByKey(int DangKyLichHen_Id)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.GetByKey(DangKyLichHen_Id);
+            return objc.LH_GetByKey(DangKyLichHen_Id);
         }
         //DangKyHenKB_UpdateRandomMaLichHen
-        public Int32 UpdateRandomMaLichHen(int DangKyLichHen_Id)
+        public Int32 LH_UpdateRandomMaLichHen(int DangKyLichHen_Id)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.UpdateRandomMaLichHen(DangKyLichHen_Id);
+            return objc.LH_UpdateRandomMaLichHen(DangKyLichHen_Id);
         }
         //GetByKey
-        public string LichHen_Notification()
+        public string LH_Notification()
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.LichHen_Notification();
+            return objc.LH_Notification();
         }
         //TraCuuLichKham
-        public string TraCuuLichHen(string SoDienThoai)
+        public string LH_TraCuu(string SoDienThoai)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.TraCuuLichHen(SoDienThoai);
+            return objc.LH_TraCuu(SoDienThoai);
         }
         //HuyLichHen
-        public int HuyLichHen(int DangKyLichHen_Id,int NguoiHuy_Id)
+        public int LH_Huy(int DangKyLichHen_Id,int NguoiHuy_Id)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.HuyLichHen(DangKyLichHen_Id, NguoiHuy_Id);
+            return objc.LH_Huy(DangKyLichHen_Id, NguoiHuy_Id);
         }
         #endregion
 

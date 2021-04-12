@@ -55,7 +55,7 @@ namespace ViHISSrv.Data
 
         #region DangKyHenKB
         //Insert
-        public Int32 Insert(DangKyHenKBModel obj)
+        public Int32 LH_Insert(DangKyHenKBModel obj)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -63,7 +63,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cmd, "@Action", DbType.String, "Insert");
+                    db.AddInParameter(cmd, "@Action", DbType.String, "LH_Insert");
                     db.AddOutParameter(cmd, "@DangKyLichHen_Id", DbType.Int32, obj.DangKyLichHen_Id);
                     db.AddInParameter(cmd, "@TenBenhNhan", DbType.String, obj.TenBenhNhan);
                     db.AddInParameter(cmd, "@NgaySinh", DbType.DateTime, obj.NgaySinh);
@@ -88,7 +88,7 @@ namespace ViHISSrv.Data
             };
         }
         //Update
-        public int Update(DangKyHenKBModel mol)
+        public int LH_Update(DangKyHenKBModel mol)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -96,7 +96,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cm = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cm, "@AcTion", DbType.String, "Update");
+                    db.AddInParameter(cm, "@AcTion", DbType.String, "LH_Update");
                     db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, mol.DangKyLichHen_Id);
                     db.AddInParameter(cm, "@TenBenhNhan", DbType.String, mol.TenBenhNhan);
                     db.AddInParameter(cm, "@NgaySinh", DbType.Date, mol.NgaySinh);
@@ -120,14 +120,14 @@ namespace ViHISSrv.Data
             }
         }
         //GetByKey
-        public string GetByKey(int DangKyLichHen_Id)
+        public string LH_GetByKey(int DangKyLichHen_Id)
         {
             try
             {
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cmd, "@Action", DbType.String, "GetByKey");
+                    db.AddInParameter(cmd, "@Action", DbType.String, "LH_GetByKey");
                     db.AddInParameter(cmd, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
                     var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
                     return obj;
@@ -139,7 +139,7 @@ namespace ViHISSrv.Data
             }
         }
         //Update mã lịch hẹn
-        public int UpdateRandomMaLichHen(int DangKyLichHen_Id)
+        public int LH_UpdateRandomMaLichHen(int DangKyLichHen_Id)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -147,7 +147,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cm = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cm, "@AcTion", DbType.String, "UpdateRandomMaLichHen");
+                    db.AddInParameter(cm, "@AcTion", DbType.String, "LH_UpdateRandomMaLichHen");
                     db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
 
                     iResult = db.ExecuteNonQuery(cm);
@@ -159,15 +159,15 @@ namespace ViHISSrv.Data
                 return -2;
             }
         }
-        //LichHen_Notification
-        public string LichHen_Notification()
+        //LichHen_Notification  
+        public string LH_Notification()
         {
             try
             {
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cmd, "@Action", DbType.String, "LichHen_Notification");
+                    db.AddInParameter(cmd, "@Action", DbType.String, "LH_Notification");
                     var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
                     return obj;
                 }
@@ -178,14 +178,14 @@ namespace ViHISSrv.Data
             }
         }
         //TraCuuLichKham
-        public string TraCuuLichHen(string SoDienThoai)
+        public string LH_TraCuu(string SoDienThoai)
         {
             try
             {
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cmd, "@Action", DbType.String, "TraCuuLichHen");
+                    db.AddInParameter(cmd, "@Action", DbType.String, "LH_TraCuu");
                     db.AddInParameter(cmd, "@SoDienThoai", DbType.String, SoDienThoai);
                     var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
                     return obj;
@@ -197,7 +197,7 @@ namespace ViHISSrv.Data
             }
         }
         //HuyLichHen
-        public int HuyLichHen(int DangKyLichHen_Id, int NguoiHuy_Id)
+        public int LH_Huy(int DangKyLichHen_Id, int NguoiHuy_Id)
         {
             Int32 iResult = Int32.MinValue;
             try
@@ -205,7 +205,7 @@ namespace ViHISSrv.Data
                 Database db = DatabaseFactory.CreateDatabase(ConnectionDefine.HIS_LICHHEN);
                 using (DbCommand cm = db.GetStoredProcCommand(_ProcedureName))
                 {
-                    db.AddInParameter(cm, "@AcTion", DbType.String, "HuyLichHen");
+                    db.AddInParameter(cm, "@AcTion", DbType.String, "LH_Huy");
                     db.AddInParameter(cm, "@DangKyLichHen_Id", DbType.Int32, DangKyLichHen_Id);
                     db.AddInParameter(cm, "@UpdateBy_Id", DbType.Int32, NguoiHuy_Id);
 

@@ -32,31 +32,31 @@ namespace ViHISSrv.Services.Contracts
         //Insert
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 Insert(DangKyHenKBModel obj);
+        Int32 LH_Insert(DangKyHenKBModel obj);
         //Update
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 Update(DangKyHenKBModel obj);
+        Int32 LH_Update(DangKyHenKBModel obj);
         //GetByKey
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]    
-        string GetByKey( int DangKyLichHen_Id);
+        string LH_GetByKey( int DangKyLichHen_Id);
         //UpdateRandomMaLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 UpdateRandomMaLichHen(int DangKyLichHen_Id);
+        Int32 LH_UpdateRandomMaLichHen(int DangKyLichHen_Id);
         //LichHen_Notification
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        string LichHen_Notification();
+        string LH_Notification();
         //LichHen_Notification
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        string TraCuuLichHen(string SoDienThoai);
+        string LH_TraCuu(string SoDienThoai);
         //HuyLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        Int32 HuyLichHen(Int32 DangKyLichHen_Id,Int32 NguoiHuy_Id);
+        Int32 LH_Huy(Int32 DangKyLichHen_Id,Int32 NguoiHuy_Id);
         #endregion  
 
         #region QMS

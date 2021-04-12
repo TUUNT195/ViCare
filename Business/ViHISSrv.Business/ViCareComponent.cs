@@ -27,12 +27,12 @@ namespace ViHISSrv.Business
 
         #region DangKyHenKB
         //Insert
-        public int Insert(DangKyHenKBModel obj)
+        public int LH_Insert(DangKyHenKBModel obj)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.Insert(obj);
+                return tkdac.LH_Insert(obj);
             }
             catch (Exception ex)
             {
@@ -40,12 +40,12 @@ namespace ViHISSrv.Business
             }
         }
         //Update
-        public int Update(DangKyHenKBModel obj)
+        public int LH_Update(DangKyHenKBModel obj)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.Update(obj);
+                return tkdac.LH_Update(obj);
             }
             catch (Exception ex)
             {
@@ -53,12 +53,12 @@ namespace ViHISSrv.Business
             }
         }
         //GetByKey
-        public string GetByKey(int DangKyLichHen_Id)
+        public string LH_GetByKey(int DangKyLichHen_Id)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.GetByKey(DangKyLichHen_Id);
+                return tkdac.LH_GetByKey(DangKyLichHen_Id);
             }
             catch (Exception ex)
             {
@@ -66,38 +66,38 @@ namespace ViHISSrv.Business
             }
         }
         //DangKyHenKB_UpdateRandomMaLichHen
-        public int UpdateRandomMaLichHen(int DangKyLichHen_Id)
+        public int LH_UpdateRandomMaLichHen(int DangKyLichHen_Id)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.UpdateRandomMaLichHen(DangKyLichHen_Id);
+                return tkdac.LH_UpdateRandomMaLichHen(DangKyLichHen_Id);
             }
             catch (Exception ex)
             {
                 return -2;
             }
         }
-        //GetByKey
-        public string LichHen_Notification()
+        //LichHen_Notification
+        public string LH_Notification()
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.LichHen_Notification();
+                return tkdac.LH_Notification();
             }
             catch (Exception ex)
             {
                 return null;
             }
         }
-        //GetByKey
-        public string TraCuuLichHen(string SoDienThoai)
+        //TraCuuLichHen
+        public string LH_TraCuu(string SoDienThoai)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.TraCuuLichHen(SoDienThoai);
+                return tkdac.LH_TraCuu(SoDienThoai);
             }
             catch (Exception ex)
             {
@@ -106,12 +106,12 @@ namespace ViHISSrv.Business
         }
         //
         //HuyLichHen
-        public int HuyLichHen(int DangKyLichHen_Id, int NguoiHuy_Id)
+        public int LH_Huy(int DangKyLichHen_Id, int NguoiHuy_Id)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.HuyLichHen(DangKyLichHen_Id, NguoiHuy_Id);
+                return tkdac.LH_Huy(DangKyLichHen_Id, NguoiHuy_Id);
             }
             catch (Exception ex)
             {
@@ -142,7 +142,7 @@ namespace ViHISSrv.Business
                 ViCareDAC tkdac = new ViCareDAC();
                 return tkdac.QMS_Notification(BenhNhan_Id, Type, PhongBanID, IntPara_0, IntPara_1);
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 return null;
             }
