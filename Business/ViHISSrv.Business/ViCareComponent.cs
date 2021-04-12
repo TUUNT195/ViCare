@@ -92,12 +92,12 @@ namespace ViHISSrv.Business
             }
         }
         //GetByKey
-        public string TraCuuLichHen()
+        public string TraCuuLichHen(string SoDienThoai)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.TraCuuLichHen();
+                return tkdac.TraCuuLichHen(SoDienThoai);
             }
             catch (Exception ex)
             {

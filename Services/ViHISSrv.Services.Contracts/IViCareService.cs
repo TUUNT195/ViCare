@@ -39,7 +39,7 @@ namespace ViHISSrv.Services.Contracts
         Int32 Update(DangKyHenKBModel obj);
         //GetByKey
         [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]    
         string GetByKey( int DangKyLichHen_Id);
         //UpdateRandomMaLichHen
         [OperationContract]
@@ -52,7 +52,7 @@ namespace ViHISSrv.Services.Contracts
         //LichHen_Notification
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        string TraCuuLichHen();
+        string TraCuuLichHen(string SoDienThoai);
         //HuyLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]

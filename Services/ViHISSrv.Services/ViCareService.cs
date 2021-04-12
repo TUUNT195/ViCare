@@ -64,10 +64,10 @@ namespace ViHISSrv.Services
             return objc.LichHen_Notification();
         }
         //TraCuuLichKham
-        public string TraCuuLichHen()
+        public string TraCuuLichHen(string SoDienThoai)
         {
             ViCareComponent objc = new ViCareComponent();
-            return objc.TraCuuLichHen();
+            return objc.TraCuuLichHen(SoDienThoai);
         }
         //HuyLichHen
         public int HuyLichHen(int DangKyLichHen_Id,int NguoiHuy_Id)

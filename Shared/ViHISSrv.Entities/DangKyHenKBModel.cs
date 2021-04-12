@@ -48,8 +48,8 @@ namespace ViHISSrv.Entities
         //public string TenBacSi { get; set; }
         [DataMember]
         public int ChuyenKhoa_Id { get; set; }
-        //[DataMember]
-        //public string ChuyenKhoa { get; set; }
+        [DataMember]
+        public string ChuyenKhoa { get; set; }
         //[DataMember]
         //public int PhongKham_Id { get; set; }
         //[DataMember]

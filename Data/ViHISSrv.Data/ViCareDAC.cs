@@ -178,7 +178,7 @@ namespace ViHISSrv.Data
             }
         }
         //TraCuuLichKham
-        public string TraCuuLichHen()
+        public string TraCuuLichHen(string SoDienThoai)
         {
             try
             {
@@ -186,6 +186,7 @@ namespace ViHISSrv.Data
                 using (DbCommand cmd = db.GetStoredProcCommand(_ProcedureName))
                 {
                     db.AddInParameter(cmd, "@Action", DbType.String, "TraCuuLichHen");
+                    db.AddInParameter(cmd, "@SoDienThoai", DbType.String, SoDienThoai);
                     var obj = JsonConvert.SerializeObject(db.ExecuteDataSet(cmd).Tables[0]);
                     return obj;
                 }
