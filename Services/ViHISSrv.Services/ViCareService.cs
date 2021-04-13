@@ -25,7 +25,7 @@ namespace ViHISSrv.Services
         {
             int DangKyLichHen_Id = Int32.MinValue;
             ViCareComponent objc = new ViCareComponent();
-            DataTable dt1 = objc.Get_DangKyLichHen_Id_by_MaBenhNhan(MaBenhNhan);
+            DataTable dt1 = objc.VC_Get_by_MaBenhNhan(MaBenhNhan);
             if (dt1.Rows[0]["Ref_DangKyLichHen_Id"] != null)
                 DangKyLichHen_Id = Convert.ToInt32(dt1.Rows[0]["Ref_DangKyLichHen_Id"]);
             var dt2 = objc.LH_GetByKey(DangKyLichHen_Id);
@@ -52,6 +52,12 @@ namespace ViHISSrv.Services
             ViCareComponent objc = new ViCareComponent();
             return objc.LH_GetByKey(DangKyLichHen_Id);
         }
+        //LH_GetBy_MaLichHen
+        public string LH_GetBy_MaLichHen(string MaLichHen)
+        {
+            ViCareComponent objc = new ViCareComponent();
+            return objc.LH_GetBy_MaLichHen(MaLichHen);
+        }
         //DangKyHenKB_UpdateRandomMaLichHen
         public Int32 LH_UpdateRandomMaLichHen(int DangKyLichHen_Id)
         {
@@ -75,6 +81,33 @@ namespace ViHISSrv.Services
         {
             ViCareComponent objc = new ViCareComponent();
             return objc.LH_Huy(DangKyLichHen_Id, NguoiHuy_Id);
+        }
+        #endregion
+
+        #region ViCare
+        //QMS_GetByCondition
+        public string VC_Get_ThongTinSinhHieu(int DangKy_Id)
+        {
+            ViCareComponent objc = new ViCareComponent();
+            return objc.VC_Get_ThongTinSinhHieu(DangKy_Id);
+        }
+        //VC_His_KhamBenh
+        public DataSet VC_His_KhamBenh(int BenhNhan_Id)
+        {
+            ViCareComponent objc = new ViCareComponent();
+            return objc.VC_His_KhamBenh (BenhNhan_Id);
+        }
+        //VC_His_CLS
+        public string VC_His_CLS(int BenhNhan_Id)
+        {
+            ViCareComponent objc = new ViCareComponent();
+            return objc.VC_His_CLS(BenhNhan_Id);
+        }
+        //VC_His_PTTT
+        public string VC_His_PTTT(int BenhNhan_Id)
+        {
+            ViCareComponent objc = new ViCareComponent();
+            return objc.VC_His_PTTT(BenhNhan_Id);
         }
         #endregion
 

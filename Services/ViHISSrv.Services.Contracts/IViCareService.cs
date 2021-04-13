@@ -12,6 +12,7 @@ using System.IO;
 using System.ServiceModel;
 using ViHISSrv.Entities;
 using System.ServiceModel.Web;
+using System.Data;
 
 namespace ViHISSrv.Services.Contracts
 {
@@ -41,6 +42,10 @@ namespace ViHISSrv.Services.Contracts
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]    
         string LH_GetByKey( int DangKyLichHen_Id);
+        //GetByKey
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        string LH_GetBy_MaLichHen(string MaLichHen);
         //UpdateRandomMaLichHen
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
@@ -57,7 +62,26 @@ namespace ViHISSrv.Services.Contracts
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
         Int32 LH_Huy(Int32 DangKyLichHen_Id,Int32 NguoiHuy_Id);
-        #endregion  
+        #endregion
+
+        #region ViCare
+        //Get_ThongTinSinhHieu
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        string VC_Get_ThongTinSinhHieu(int DangKy_Id);
+        //VC_His_KhamBenh
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        DataSet VC_His_KhamBenh(int BenhNhan_Id);
+        //VC_His_CLS
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        string VC_His_CLS(int BenhNhan_Id);
+        //VC_His_PTTT
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json)]
+        string VC_His_PTTT(int BenhNhan_Id);
+        #endregion
 
         #region QMS
         //QMS_GetByCondition

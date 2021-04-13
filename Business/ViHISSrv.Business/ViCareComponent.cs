@@ -11,12 +11,12 @@ namespace ViHISSrv.Business
     {
         #region Get info
         //GetByKey
-        public DataTable Get_DangKyLichHen_Id_by_MaBenhNhan(string MaBenhNhan)
+        public DataTable VC_Get_by_MaBenhNhan(string MaBenhNhan)
         {
             try
             {
                 ViCareDAC tkdac = new ViCareDAC();
-                return tkdac.Get_DangKyLichHen_Id_by_MaBenhNhan(MaBenhNhan);
+                return tkdac.VC_Get_by_MaBenhNhan(MaBenhNhan);
             }
             catch (Exception ex)
             {
@@ -59,6 +59,19 @@ namespace ViHISSrv.Business
             {
                 ViCareDAC tkdac = new ViCareDAC();
                 return tkdac.LH_GetByKey(DangKyLichHen_Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //GetByKey
+        public string LH_GetBy_MaLichHen(string MaLichHen)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.LH_GetBy_MaLichHen(MaLichHen);
             }
             catch (Exception ex)
             {
@@ -116,6 +129,61 @@ namespace ViHISSrv.Business
             catch (Exception ex)
             {
                 return -2;
+            }
+        }
+        #endregion
+
+        #region ViCare
+        //TraCuuLichHen
+        public string VC_Get_ThongTinSinhHieu(int DangKy_Id)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.VC_Get_ThongTinSinhHieu(DangKy_Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //
+        public DataSet VC_His_KhamBenh(int BenhNhan_Id)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.VC_His_KhamBenh(BenhNhan_Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //
+        public string VC_His_CLS(int BenhNhan_Id)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.VC_His_CLS(BenhNhan_Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //
+        public string VC_His_PTTT(int BenhNhan_Id)
+        {
+            try
+            {
+                ViCareDAC tkdac = new ViCareDAC();
+                return tkdac.VC_His_PTTT(BenhNhan_Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
         #endregion
